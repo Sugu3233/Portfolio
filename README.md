@@ -8,7 +8,7 @@ Portfolio/
 ├── css/
 │   └── style.css       styling + light/dark theme tokens
 ├── js/
-│   └── script.js       all interactivity
+│   └── script.js       all interactivity 
 ├── assets/
 │   ├── profile.jpg     (add yours — falls back to initials if missing)
 │   └── resume.pdf      (add yours — linked from the "Download CV" button)
