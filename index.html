@@ -1,0 +1,470 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Sugumar C — Laravel Full Stack Developer based in Erode, Tamil Nadu. I build REST APIs and ERP applications." />
+  <meta name="author" content="Sugumar C" />
+
+  <!-- Open Graph (link previews on WhatsApp / LinkedIn / Twitter) -->
+  <meta property="og:title" content="Sugumar C — Laravel Full Stack Developer" />
+  <meta property="og:description" content="Laravel Full Stack Developer from Erode, Tamil Nadu. REST APIs and ERP applications." />
+  <meta property="og:type" content="website" />
+
+  <title>Sugumar C | Laravel Full Stack Developer</title>
+
+  <!-- Favicon: inline SVG, no extra file needed -->
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ctext y='.9em' font-size='90'%3E%F0%9F%92%BB%3C/text%3E%3C/svg%3E" />
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&amp;family=JetBrains+Mono:wght@400;500&amp;display=swap" rel="stylesheet" />
+
+  <link rel="stylesheet" href="css/style.css" />
+
+  <!-- Applies the saved theme BEFORE first paint so the page never flashes the wrong colours -->
+  <script>
+    (function () {
+      try {
+        var saved = localStorage.getItem('theme');
+        var prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+        document.documentElement.setAttribute('data-theme', saved || (prefersDark ? 'dark' : 'light'));
+      } catch (e) {
+        document.documentElement.setAttribute('data-theme', 'light');
+      }
+    })();
+  </script>
+</head>
+
+<body>
+  <!-- Accessibility: lets keyboard users jump past the nav -->
+  <a href="#home" class="skip-link">Skip to content</a>
+
+  <!-- Reading progress bar -->
+  <div class="scroll-progress" id="scrollProgress"></div>
+
+  <!-- ==================== HEADER / NAV ==================== -->
+  <header class="header" id="header">
+    <nav class="nav container" aria-label="Main navigation">
+      <a href="#home" class="nav__logo">
+        <span class="nav__logo-mark">&lt;/&gt;</span>
+        <span class="nav__logo-text">Sugu<span class="accent">mar</span></span>
+      </a>
+
+      <div class="nav__menu" id="navMenu">
+        <ul class="nav__list">
+          <li><a href="#home"       class="nav__link active">Home</a></li>
+          <li><a href="#about"      class="nav__link">About</a></li>
+          <li><a href="#skills"     class="nav__link">Skills</a></li>
+          <li><a href="#projects"   class="nav__link">Projects</a></li>
+          <li><a href="#experience" class="nav__link">Experience</a></li>
+          <li><a href="#contact"    class="nav__link">Contact</a></li>
+        </ul>
+      </div>
+
+      <div class="nav__actions">
+        <!-- Theme toggle -->
+        <button class="theme-toggle" id="themeToggle" aria-label="Switch colour theme" title="Switch theme">
+          <svg class="icon icon-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M6.34 17.66l-1.41 1.41M19.07 4.93l-1.41 1.41"/></svg>
+          <svg class="icon icon-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
+        </button>
+
+        <!-- Hamburger -->
+        <button class="nav__toggle" id="navToggle" aria-label="Open menu" aria-expanded="false" aria-controls="navMenu">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </nav>
+  </header>
+
+  <main>
+    <!-- ==================== HERO ==================== -->
+    <section class="hero section" id="home">
+      <div class="hero__bg" aria-hidden="true">
+        <span class="blob blob--1"></span>
+        <span class="blob blob--2"></span>
+        <span class="grid-overlay"></span>
+      </div>
+
+      <div class="container hero__container">
+        <div class="hero__content">
+          <p class="hero__greeting reveal">
+            <span class="wave">&#128075;</span> Hello, I&rsquo;m
+          </p>
+          <h1 class="hero__title reveal">Sugumar C</h1>
+          <h2 class="hero__subtitle reveal">
+            I&rsquo;m a <span class="typed" id="typed"></span><span class="cursor" aria-hidden="true">|</span>
+          </h2>
+          <p class="hero__text reveal">
+            Laravel full stack developer based in Erode, Tamil Nadu. I build REST APIs and
+            ERP applications &mdash; the data models, the endpoints, and the screens that sit
+            on top of them.
+          </p>
+
+          <div class="hero__buttons reveal">
+            <a href="#projects" class="btn btn--primary">
+              View My Work
+              <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+            </a>
+            <!-- NOTE: this 404s until you put your CV at assets/resume.pdf. Delete the button if you'd rather not host one. -->
+            <a href="assets/resume.pdf" class="btn btn--ghost" download>
+              <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4M7 10l5 5 5-5M12 15V3"/></svg>
+              Download CV
+            </a>
+          </div>
+
+          <div class="hero__socials reveal">
+            <a href="https://www.linkedin.com/in/sugumar-c-06920b278/" class="social" target="_blank" rel="noopener" aria-label="LinkedIn">
+              <svg viewBox="0 0 24 24" fill="currentColor"><path d="M4.98 3.5a2.5 2.5 0 1 1 0 5 2.5 2.5 0 0 1 0-5zM2.4 21h5.2V9H2.4v12zM9.6 9h5v1.6h.1c.7-1.2 2.3-2.5 4.7-2.5 5 0 5.9 3.1 5.9 7.2V21h-5.2v-5.3c0-1.3 0-3-1.9-3s-2.1 1.4-2.1 2.9V21H9.6V9z"/></svg>
+            </a>
+            <a href="mailto:sugumar.c3233@gmail.com" class="social" aria-label="Email">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 7-10 6L2 7"/></svg>
+            </a>
+            <!-- ADD YOUR GITHUB: uncomment and drop your profile URL in.
+            <a href="https://github.com/YOUR_USERNAME" class="social" target="_blank" rel="noopener" aria-label="GitHub">
+              <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 .3a12 12 0 0 0-3.8 23.4c.6.1.8-.3.8-.6v-2.2c-3.3.7-4-1.6-4-1.6-.6-1.4-1.4-1.8-1.4-1.8-1-.7.1-.7.1-.7 1.2.1 1.8 1.2 1.8 1.2 1 1.8 2.8 1.3 3.5 1 .1-.8.4-1.3.7-1.6-2.7-.3-5.5-1.3-5.5-5.9 0-1.3.5-2.4 1.2-3.2-.1-.3-.5-1.5.1-3.2 0 0 1-.3 3.3 1.2a11.5 11.5 0 0 1 6 0C17.3 4.7 18.3 5 18.3 5c.6 1.7.2 2.9.1 3.2.8.8 1.2 1.9 1.2 3.2 0 4.6-2.8 5.6-5.5 5.9.4.4.8 1.1.8 2.2v3.3c0 .3.2.7.8.6A12 12 0 0 0 12 .3"/></svg>
+            </a>
+            -->
+          </div>
+        </div>
+
+        <div class="hero__visual reveal">
+          <div class="hero__avatar">
+            <!-- Put your photo at assets/profile.jpg. If it's missing, your initials show instead. -->
+            <img src="assets/profile.jpg" alt="Portrait of Sugumar C" onerror="this.classList.add('is-hidden')" />
+            <span class="avatar-fallback" aria-hidden="true">SC</span>
+          </div>
+          <div class="float-card float-card--1">
+            <span class="dot dot--green"></span> Erode, Tamil Nadu
+          </div>
+          <div class="float-card float-card--2">
+            <strong>2+</strong> years experience
+          </div>
+        </div>
+      </div>
+
+      <a href="#about" class="scroll-hint" aria-label="Scroll to the about section">
+        <span class="mouse"><span class="wheel"></span></span>
+      </a>
+    </section>
+
+    <!-- ==================== ABOUT ==================== -->
+    <section class="section" id="about">
+      <div class="container">
+        <header class="section__head reveal">
+          <span class="section__tag">01 &mdash; About</span>
+          <h2 class="section__title">A little about me</h2>
+          <p class="section__sub">Who I am and what I work on.</p>
+        </header>
+
+        <div class="about">
+          <div class="about__text reveal">
+            <!-- Rewrite these in your own voice — they're built only from what you told me. -->
+            <p>
+              I&rsquo;m a <strong>Laravel full stack developer</strong> based in Erode, Tamil Nadu,
+              currently working as a Junior Software Developer at <strong>BrightBeamSolutions</strong>.
+            </p>
+            <p>
+              Most of my work is <strong>REST API development</strong> and building
+              <strong>ERP applications</strong> &mdash; designing the data models, writing the
+              endpoints that serve them, and putting together the interfaces teams actually use
+              day to day. Laravel and MySQL are my core stack.
+            </p>
+            <p>
+              Outside of that I&rsquo;m working through <strong>Spring Boot</strong> and
+              <strong>Flutter</strong> to widen what I can build, and getting better at the
+              parts that matter under load &mdash; query design, clean API contracts, and code
+              that stays readable six months later.
+            </p>
+
+            <ul class="about__facts">
+              <li><span>Location</span><strong>Erode, Tamil Nadu</strong></li>
+              <li><span>Experience</span><strong>2+ Years</strong></li>
+              <li><span>Core stack</span><strong>Laravel &amp; MySQL</strong></li>
+              <li><span>Email</span><strong>sugumar.c3233@gmail.com</strong></li>
+            </ul>
+
+            <a href="#contact" class="btn btn--primary">Let&rsquo;s work together</a>
+          </div>
+
+          <div class="about__stats reveal">
+            <div class="stat-card">
+              <h3 class="counter" data-target="2" data-suffix="+">0</h3>
+              <p>Years of experience</p>
+            </div>
+            <div class="stat-card">
+              <h3>REST</h3>
+              <p>APIs built &amp; maintained</p>
+            </div>
+            <div class="stat-card">
+              <h3>ERP</h3>
+              <p>Applications developed</p>
+            </div>
+            <div class="stat-card">
+              <h3>MySQL</h3>
+              <p>Primary database</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==================== SKILLS ==================== -->
+    <section class="section section--alt" id="skills">
+      <div class="container">
+        <header class="section__head reveal">
+          <span class="section__tag">02 &mdash; Skills</span>
+          <h2 class="section__title">What I work with</h2>
+          <p class="section__sub">My day-to-day stack, and what I&rsquo;m still learning.</p>
+        </header>
+
+        <div class="skills">
+          <!-- Left: proficiency bars -->
+          <div class="skills__bars reveal">
+            <h3 class="skills__heading">Core proficiency</h3>
+            <!-- These percentages are my estimate from what you described.
+                 Adjust data-level AND the visible % text so they match. -->
+            <div class="bar"><div class="bar__top"><span>Laravel (PHP)</span><span>90%</span></div><div class="bar__track"><div class="bar__fill" data-level="90"></div></div></div>
+            <div class="bar"><div class="bar__top"><span>REST API Development</span><span>85%</span></div><div class="bar__track"><div class="bar__fill" data-level="85"></div></div></div>
+            <div class="bar"><div class="bar__top"><span>MySQL</span><span>85%</span></div><div class="bar__track"><div class="bar__fill" data-level="85"></div></div></div>
+            <div class="bar"><div class="bar__top"><span>HTML, CSS &amp; JavaScript</span><span>75%</span></div><div class="bar__track"><div class="bar__fill" data-level="75"></div></div></div>
+            <div class="bar"><div class="bar__top"><span>Spring Boot</span><span>40%</span></div><div class="bar__track"><div class="bar__fill" data-level="40"></div></div></div>
+            <div class="bar"><div class="bar__top"><span>Flutter</span><span>35%</span></div><div class="bar__track"><div class="bar__fill" data-level="35"></div></div></div>
+          </div>
+
+          <!-- Right: tech grid -->
+          <div class="skills__grid reveal">
+            <h3 class="skills__heading">Toolbox</h3>
+            <div class="tech-grid">
+              <div class="tech"><span class="tech__icon">&#128640;</span>Laravel</div>
+              <div class="tech"><span class="tech__icon">&#128025;</span>PHP</div>
+              <div class="tech"><span class="tech__icon">&#128024;</span>MySQL</div>
+              <div class="tech"><span class="tech__icon">&#128260;</span>REST API</div>
+              <div class="tech"><span class="tech__icon">&#127760;</span>HTML</div>
+              <div class="tech"><span class="tech__icon">&#127912;</span>CSS</div>
+              <div class="tech"><span class="tech__icon">&#9889;</span>JavaScript</div>
+              <div class="tech"><span class="tech__icon">&#127793;</span>Blade</div>
+              <div class="tech"><span class="tech__icon">&#9749;</span>Java</div>
+              <div class="tech"><span class="tech__icon">&#127806;</span>Spring Boot</div>
+              <div class="tech"><span class="tech__icon">&#128241;</span>Flutter</div>
+              <div class="tech"><span class="tech__icon">&#128295;</span>Git</div>
+            </div>
+
+            <div class="skills__note">
+              <strong>Currently learning:</strong> Spring Boot and Flutter, alongside deeper
+              database design and API performance work.
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==================== PROJECTS ==================== -->
+    <section class="section" id="projects">
+      <div class="container">
+        <header class="section__head reveal">
+          <span class="section__tag">03 &mdash; Projects</span>
+          <h2 class="section__title">Selected work</h2>
+          <p class="section__sub">What I&rsquo;ve been building.</p>
+        </header>
+
+        <div class="filters reveal">
+          <button class="filter active" data-filter="all" aria-pressed="true">All</button>
+          <button class="filter" data-filter="erp" aria-pressed="false">ERP</button>
+          <button class="filter" data-filter="api" aria-pressed="false">APIs</button>
+        </div>
+
+        <!-- ============================================================
+             THESE TWO CARDS ARE SCAFFOLDS, not real projects.
+             They describe the kind of work you told me you do, but they
+             have no project names, no screenshots and no links.
+
+             Replace each one with something specific you actually built:
+             what it does, the tech, and a demo/repo link if it's public.
+             Work you did for BrightBeamSolutions may be confidential —
+             check before publishing details or code links.
+             ============================================================ -->
+        <div class="projects" id="projectGrid">
+          <article class="project reveal" data-category="erp">
+            <div class="project__thumb project__thumb--a"><span>&#128202;</span></div>
+            <div class="project__body">
+              <div class="project__tags"><span>Laravel</span><span>MySQL</span><span>Blade</span></div>
+              <h3 class="project__title">ERP Application Modules</h3>
+              <p class="project__desc">
+                Business modules built as part of ERP products &mdash; relational data models,
+                CRUD workflows, and role-based access for internal teams.
+              </p>
+              <!-- Add links once you have somewhere to point them:
+              <div class="project__links">
+                <a href="#" target="_blank" rel="noopener">Live Demo</a>
+                <a href="#" target="_blank" rel="noopener">Source Code</a>
+              </div>
+              -->
+            </div>
+          </article>
+
+          <article class="project reveal" data-category="api">
+            <div class="project__thumb project__thumb--b"><span>&#128260;</span></div>
+            <div class="project__body">
+              <div class="project__tags"><span>Laravel</span><span>REST</span><span>MySQL</span></div>
+              <h3 class="project__title">REST API Services</h3>
+              <p class="project__desc">
+                REST endpoints backing web and mobile clients &mdash; authentication, request
+                validation, and consistent JSON responses.
+              </p>
+              <!-- Add links once you have somewhere to point them. -->
+            </div>
+          </article>
+        </div>
+
+        <p class="projects__empty" id="projectsEmpty" hidden>No projects in this category yet.</p>
+      </div>
+    </section>
+
+    <!-- ==================== EXPERIENCE ==================== -->
+    <section class="section section--alt" id="experience">
+      <div class="container">
+        <header class="section__head reveal">
+          <span class="section__tag">04 &mdash; Experience</span>
+          <h2 class="section__title">Where I&rsquo;ve worked</h2>
+          <p class="section__sub">The short version.</p>
+        </header>
+
+        <div class="timeline">
+          <!-- Dates inferred from "2 years experience" — correct them if that's off. -->
+          <div class="tl-item reveal">
+            <div class="tl-dot"></div>
+            <div class="tl-card">
+              <span class="tl-date">2024 &mdash; Present</span>
+              <h3 class="tl-role">Junior Software Developer</h3>
+              <span class="tl-org">BrightBeamSolutions</span>
+              <p>
+                Build and maintain REST APIs and ERP applications using Laravel and MySQL —
+                data modelling, endpoint development, and the interfaces built on top of them.
+              </p>
+            </div>
+          </div>
+
+          <!-- ============================================================
+               ADD YOUR EDUCATION — you didn't send it, so I left it out
+               rather than invent a college. Uncomment and fill in:
+          <div class="tl-item reveal">
+            <div class="tl-dot"></div>
+            <div class="tl-card">
+              <span class="tl-date">YEAR &mdash; YEAR</span>
+              <h3 class="tl-role">Your degree</h3>
+              <span class="tl-org">Your college</span>
+              <p>Anything worth mentioning — coursework, final year project, achievements.</p>
+            </div>
+          </div>
+               ============================================================ -->
+        </div>
+      </div>
+    </section>
+
+    <!-- ==================== CONTACT ==================== -->
+    <section class="section" id="contact">
+      <div class="container">
+        <header class="section__head reveal">
+          <span class="section__tag">05 &mdash; Contact</span>
+          <h2 class="section__title">Let&rsquo;s build something</h2>
+          <p class="section__sub">Got a project, a role, or just a question? My inbox is open.</p>
+        </header>
+
+        <div class="contact">
+          <div class="contact__info reveal">
+            <div class="info-card">
+              <span class="info-card__icon">&#9993;&#65039;</span>
+              <div><h4>Email</h4><a href="mailto:sugumar.c3233@gmail.com">sugumar.c3233@gmail.com</a></div>
+            </div>
+            <div class="info-card">
+              <span class="info-card__icon">&#128188;</span>
+              <div><h4>LinkedIn</h4><a href="https://www.linkedin.com/in/sugumar-c-06920b278/" target="_blank" rel="noopener">sugumar-c</a></div>
+            </div>
+            <div class="info-card">
+              <span class="info-card__icon">&#128205;</span>
+              <div><h4>Location</h4><p>Erode, Tamil Nadu</p></div>
+            </div>
+            <div class="info-card">
+              <span class="info-card__icon">&#128187;</span>
+              <div><h4>Current role</h4><p>Junior Software Developer</p></div>
+            </div>
+            <!-- ADD A PHONE NUMBER if you want one public:
+            <div class="info-card">
+              <span class="info-card__icon">&#128222;</span>
+              <div><h4>Phone</h4><a href="tel:+91XXXXXXXXXX">+91 XXXXX XXXXX</a></div>
+            </div>
+            -->
+          </div>
+
+          <form class="contact__form reveal" id="contactForm" novalidate>
+            <div class="field">
+              <label for="name">Your name</label>
+              <input type="text" id="name" name="name" placeholder="Jane Doe" required />
+              <small class="error" data-error-for="name"></small>
+            </div>
+
+            <div class="field">
+              <label for="email">Email address</label>
+              <input type="email" id="email" name="email" placeholder="jane@company.com" required />
+              <small class="error" data-error-for="email"></small>
+            </div>
+
+            <div class="field">
+              <label for="subject">Subject</label>
+              <input type="text" id="subject" name="subject" placeholder="Project enquiry" required />
+              <small class="error" data-error-for="subject"></small>
+            </div>
+
+            <div class="field">
+              <label for="message">Message</label>
+              <textarea id="message" name="message" rows="5" placeholder="Tell me a bit about what you need&hellip;" required></textarea>
+              <small class="error" data-error-for="message"></small>
+            </div>
+
+            <!-- Honeypot: hidden from people, irresistible to spam bots.
+                 If it comes back filled, the submit is silently dropped. -->
+            <input type="checkbox" name="botcheck" class="hp-field" tabindex="-1" autocomplete="off" aria-hidden="true" />
+
+            <button type="submit" class="btn btn--primary btn--full" id="submitBtn">
+              <span class="btn__label">Send Message</span>
+              <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 2 11 13M22 2l-7 20-4-9-9-4 20-7z"/></svg>
+            </button>
+
+            <p class="form-status" id="formStatus" role="status" aria-live="polite"></p>
+          </form>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- ==================== FOOTER ==================== -->
+  <footer class="footer">
+    <div class="container footer__inner">
+      <a href="#home" class="nav__logo">
+        <span class="nav__logo-mark">&lt;/&gt;</span>
+        <span class="nav__logo-text">Sugu<span class="accent">mar</span></span>
+      </a>
+
+      <ul class="footer__links">
+        <li><a href="#about">About</a></li>
+        <li><a href="#skills">Skills</a></li>
+        <li><a href="#projects">Projects</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+
+      <p class="footer__copy">
+        &copy; <span id="year"></span> Sugumar C. Built with plain HTML, CSS &amp; JavaScript.
+      </p>
+    </div>
+  </footer>
+
+  <!-- Back to top -->
+  <button class="to-top" id="toTop" aria-label="Back to top">
+    <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="m18 15-6-6-6 6"/></svg>
+  </button>
+
+  <script src="js/script.js"></script>
+</body>
+</html>
